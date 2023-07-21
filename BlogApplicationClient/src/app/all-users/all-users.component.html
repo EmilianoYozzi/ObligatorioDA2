@@ -1,0 +1,18 @@
+<div class="container">
+    <h2>All Users</h2>
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let user of users">
+        <div class="row">
+          <div class="col-md-8">
+            <p><b>Username:</b> {{user.username}}</p>
+            <p><b>Name:</b> {{user.name}}</p>
+            <p><b>Last Name:</b> {{user.lastname}}</p>
+          </div>
+          <div class="col-md-4">
+            <a class="btn btn-primary" [routerLink]="['/user-update', user.username]">Modify</a>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+  

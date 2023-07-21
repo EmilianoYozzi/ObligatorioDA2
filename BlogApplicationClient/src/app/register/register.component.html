@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h1>Sign Up</h1>
+            <form (ngSubmit)="onSubmit()">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="name" [(ngModel)]="Name" name="name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="lastname" class="form-label">Last Name</label>
+                    <input type="text" class="form-control" id="lastname" [(ngModel)]="LastName" name="lastname" required>
+                </div>
+                <div class="mb-3">
+                    <label for="username" class="form-label">Username</label>
+                    <input type="text" class="form-control" id="username" [(ngModel)]="Username" name="username" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" [(ngModel)]="Email" name="email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="password" [(ngModel)]="Password" name="password" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+            <p class="mt-3">Already a user? <button routerLink="/login" class="btn btn-link">Login</button></p>
+        </div>
+    </div>
+</div>

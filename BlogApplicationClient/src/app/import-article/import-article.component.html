@@ -1,0 +1,27 @@
+<div class="container py-5">
+    <h1>Import Article</h1>
+    <div class="form-group">
+      <label for="importer">Importer:</label>
+      <select id="importer" class="form-control" (change)="onImporterChange($event)">
+        <option *ngFor="let importer of importers" [value]="importer.name">{{importer.name}}</option>
+      </select>
+    </div>
+  
+    <!-- Add formGroup directive here -->
+    <form [formGroup]="parametersForm">
+      <div *ngFor="let parameter of selectedImporter?.parameters" class="form-group">
+        <label for="{{parameter.name}}">{{parameter.name}} ({{parameter.parameterType}}):</label>
+        <!-- Connect input to formControl -->
+        <input type="text" id="{{parameter.name}}" class="form-control" formControlName="{{parameter.name}}" [required]="parameter.necessary">
+      </div>
+    </form>
+  
+    <button class="btn btn-primary" (click)="importArticles()">Import</button>
+  
+    <div *ngIf="importResult" class="mt-4">
+      <h2>Import Result:</h2>
+      <ul class="list-group">
+        <li class="list-group-item" *ngFor="let article of importResult">{{article.title}}</li>
+      </ul>
+    </div>
+  </div>

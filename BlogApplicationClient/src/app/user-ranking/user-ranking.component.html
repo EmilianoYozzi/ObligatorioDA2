@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="row justify-content-center">
+      <div class="col-6">
+        <h2 class="text-center">User Ranking</h2>
+        <div class="input-group mb-3">
+          <label class="input-group-text" for="rankingTypeSelect">Options</label>
+          <select class="form-select" id="rankingTypeSelect" [(ngModel)]="rankingType" name="rankingType">
+            <option value="activity">Activity</option>
+            <option value="offenses">Offenses</option>
+          </select>
+        </div>
+        <div class="input-group mb-3">
+          <span class="input-group-text">From</span>
+          <input type="date" class="form-control" [(ngModel)]="startDate" name="startDate">
+          <span class="input-group-text">To</span>
+          <input type="date" class="form-control" [(ngModel)]="endDate" name="endDate">
+        </div>
+        <button class="btn btn-primary" (click)="loadRanking()">Load Ranking</button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col" *ngFor="let userScore of userScores">
+        <div class="card mt-3">
+          <div class="card-body">
+            <h5 class="card-title">{{ userScore.username }}</h5>
+            <p class="card-text">Points: {{ userScore.points }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

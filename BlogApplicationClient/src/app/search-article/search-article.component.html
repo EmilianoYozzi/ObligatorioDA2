@@ -1,0 +1,33 @@
+<div class="input-group mb-3">
+    <input type="text" class="form-control rounded-pill" placeholder="Search articles" [(ngModel)]="query" name="query">
+    <button class="btn btn-primary rounded-pill ms-2" type="button" id="button-addon2" (click)="search()">Search</button>
+  </div>
+  <div style="height: 400px; overflow-y: scroll;">
+    <div class="row row-cols-1 g-4">
+      <div class="col" *ngFor="let article of articles">
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title">{{ article.title }}</h5>
+            <p class="card-text">{{ article.text }}</p>
+            <!-- Show comments -->
+            <div class="card mt-3" *ngIf="article.comments && article.comments.length > 0">
+              <div class="card-header">
+                Comments
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item" *ngFor="let comment of article.comments">
+                  {{ comment.text }} <strong>(by: {{ comment.owner }})</strong>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted">By: {{ article.owner }}</small>
+            <!-- Link to read more -->
+            <button class="btn btn-primary float-right" routerLink="/article-read/{{ article.id }}">Read more</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

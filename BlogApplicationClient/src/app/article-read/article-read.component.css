@@ -1,0 +1,13 @@
+.img-box {
+    border: 1px solid #ddd;  /* change as per your requirement */
+    padding: 10px;
+    margin: 10px 0;
+    width: 300px;  /* change as per your requirement */
+  }
+  
+  .article-img {
+    width: 100%;
+    height: auto;
+  }
+  
+  

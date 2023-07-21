@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<root>
+	<Articles>
+		<Title>Article1</Title>
+		<Text>This is the text of Article1.</Text>
+		<OwnerUsername>SupremeAdmin</OwnerUsername>
+		<Template>NoImage</Template>
+		<Visibility>Public</Visibility>
+	</Articles>
+	<Articles>
+		<Title>Article2</Title>
+		<Text>This is the text of Article2.</Text>
+		<OwnerUsername>Blogger</OwnerUsername>
+		<Template>NoImage</Template>
+		<Visibility>Private</Visibility>
+	</Articles>
+</root>

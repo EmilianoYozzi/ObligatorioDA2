@@ -1,0 +1,17 @@
+<div class="container">
+    <h2>Articles by {{username}}</h2>
+    <div class="card mb-3" *ngFor="let article of articles">
+      <div class="card-body">
+        <h5 class="card-title">{{article.title}}</h5>
+        <p class="card-text">{{article.text}}</p>
+        <div class="d-flex justify-content-between">
+          <p class="card-text"><small class="text-muted">Template: {{article.template}}</small></p>
+          <p class="card-text"><small class="text-muted">Comments: {{article.comments.length}}</small></p>
+        </div>
+      </div>
+      <div class="card-footer">
+        <img *ngFor="let image of article.images" [src]="image" class="img-fluid">
+      </div>
+    </div>
+  </div>
+  

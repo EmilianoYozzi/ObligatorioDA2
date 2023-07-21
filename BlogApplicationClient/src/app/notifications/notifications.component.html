@@ -1,0 +1,17 @@
+<div class="container">
+    <h2 class="mb-3">Your notifications:</h2>
+    <ul class="list-group">
+        <li *ngFor="let notification of notifications" class="list-group-item">
+            <div class="d-flex justify-content-between">
+                <div>
+                    <h5 class="mb-1">{{ notification.message }}</h5>
+                    <small class="text-muted">{{ notification.date | date:'medium' }}</small>
+                </div>
+                <div>
+                    <button class="btn btn-primary" (click)="navigateToNotification(notification.uri)">View</button>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
+

@@ -1,0 +1,41 @@
+<div class="container">
+    <form [formGroup]="articleForm" (ngSubmit)="onSubmit()">
+      <div class="mb-3">
+        <label for="title" class="form-label">Title</label>
+        <input type="text" class="form-control" id="title" formControlName="Title">
+      </div>
+  
+      <div class="mb-3">
+        <label for="text" class="form-label">Text</label>
+        <textarea class="form-control" id="text" rows="7" formControlName="Text"></textarea>
+      </div>
+  
+      <div class="mb-3">
+        <label for="visibility" class="form-label">Visibility</label>
+        <select class="form-control form-select" id="visibility" formControlName="Visibility">
+          <option value="" disabled>Select Visibility</option>
+          <option value="Public">Public</option>
+          <option value="Private">Private</option>
+        </select>
+      </div>
+  
+      <div class="mb-3">
+        <label for="images" class="form-label">Images</label>
+        <input type="file" class="form-control" id="images" (change)="onFileChange($event)" multiple>
+      </div>
+  
+      <div class="mb-3" *ngIf="imagesLength > 0">
+        <label for="template" class="form-label">Template</label>
+        <select class="form-control form-select" id="template" formControlName="Template">
+          <option value="" disabled>Select Template</option>
+          <option value="Top" *ngIf="imagesLength === 1">Top</option>
+          <option value="Bottom" *ngIf="imagesLength === 1">Bottom</option>
+          <option value="Top-Left" *ngIf="imagesLength === 1">Top-Left</option>
+          <option value="Top and Bottom" *ngIf="imagesLength === 2">Top and Bottom</option>
+        </select>
+      </div>
+  
+      <button type="submit" class="btn btn-primary" [disabled]="!articleForm.valid">Submit</button>
+    </form>
+  </div>
+  
